@@ -15,8 +15,12 @@
   // close it when a link is tapped or Escape is pressed.
   const navCb = document.getElementById("nav-toggle");
   if (navCb) {
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
     const sync = () => {
-      document.body.style.overflow = navCb.checked ? "hidden" : "";
+      const open = navCb.checked;
+      document.body.style.overflow = open ? "hidden" : "";
+      // status-bar tint: brand blue while the menu is open, cream otherwise
+      if (themeMeta) themeMeta.setAttribute("content", open ? "#1f4fe0" : "#f3ecd9");
     };
     navCb.addEventListener("change", sync);
     document.querySelectorAll(".nav__links a").forEach((a) =>
