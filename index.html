@@ -1,18 +1,122 @@
-
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BVLT5JBWNJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BVLT5JBWNJ');
-</script>
-
-<meta http-equiv="refresh" content="0; url=https://www.felipebrugues.com/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Economist: Felipe Brugués</title>
+  <meta name="description" content="Felipe Brugués is an Assistant Professor of economics at ITAM, working on industrial organization, finance, development economics, and political economy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
+<body>
 
-</html> 
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__in">
+      <a class="brand" href="index.html"><span class="dot"></span> Felipe Brugués</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="art.html">Art</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero__grid">
+        <div class="hero__head">
+          <h1 class="hero__title">Felipe Brugués</h1>
+          <p class="hero__role">
+            Welcome. I'm an Assistant Professor working on industrial organization,
+            finance, development economics, and political economy: how firms behave in weak
+            institutional environments.
+          </p>
+          <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn" href="research.html">See my research <span class="arr">→</span></a>
+            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero__photo">
+          <div class="frame">
+            <img src="assets/img/felipe.jpg" alt="Felipe Brugués" />
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__meta">
+        <div class="item"><div class="k">Role</div><div class="v">Assistant Professor</div></div>
+        <div class="item"><div class="k">Institution</div><div class="v">ITAM Business School</div></div>
+        <div class="item"><div class="k">Ph.D.</div><div class="v">Brown University, 2021</div></div>
+        <div class="item"><div class="k">Fields</div><div class="v">IO · Development · Finance · Political Economy</div></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section wrap" id="about">
+      <div class="about__grid">
+        <div>
+          <span class="eyebrow reveal">01 · About</span>
+        </div>
+        <div class="about__body reveal" data-d="1">
+          <p>
+            I am an <strong>Assistant Professor at the Business School of the Instituto
+            Tecnológico Autónomo de México (ITAM)</strong>. Before joining ITAM, I spent a year
+            as a postdoctoral researcher at Universitat Pompeu Fabra. Starting July 2027, 
+            I will be an Assistant Professor in Economics at the University of Toronto.
+          </p>
+          <p>
+            I received my Ph.D. in Economics from <strong>Brown University in 2021</strong>. My
+            research sits at the intersection of industrial organization, finance, development economics,
+            and political economy, with a focus on firm behavior and agency frictions in weak
+            institutional environments.
+          </p>
+          <p>
+            Alongside economics, I keep an active studio practice as an amateur visual artist.
+          </p>
+
+          <div class="about__facts">
+            <div class="fact"><span class="k">Next</span><span class="v">University of Toronto · Canada <small>Assistant Professor, from 2027</small></span></div>
+            <div class="fact"><span class="k">Now</span><span class="v">ITAM · Mexico <small>Assistant Professor, 2022 – 2027</small></span></div>
+            <div class="fact"><span class="k">Before</span><span class="v">Universitat Pompeu Fabra · Spain <small>Postdoctoral Researcher, 2021 – 2022</small></span></div>
+            <div class="fact"><span class="k">Training</span><span class="v">Brown University · USA · Ph.D. Economics, 2021 <small>Advisors: Jesse Shapiro, Rafael La Porta, Neil Thakral</small></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- CONTACT (dark) -->
+    <section class="section dark" id="contact">
+      <div class="wrap">
+        <span class="eyebrow reveal">Contact</span>
+
+        <div class="reveal" data-d="1" style="margin-top: clamp(34px,5vw,56px);">
+          <div class="contact__row">
+            <a href="mailto:felipe.brugues@itam.mx">felipe.brugues@itam.mx</a>
+          </div>
+        </div>
+
+        <div class="foot">
+          <small>© <span data-year>2026</span> Felipe Brugués · ITAM</small>
+          <small>Mexico City.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
