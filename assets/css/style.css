@@ -522,7 +522,7 @@ dialog.lightbox[open] .lightbox__panel { animation: lb-in .35s var(--ease) both;
   }
   .nav__links.open { transform: none; }
   .nav__links a { color: var(--paper); font-size: 1.4rem; }
-  .nav__toggle { display: block; z-index: 70; }
+  .nav__toggle { display: block; position: relative; z-index: 70; }
   .nav.menu-open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav.menu-open .nav__toggle span:nth-child(2) { opacity: 0; }
   .nav.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
