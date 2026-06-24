@@ -516,7 +516,7 @@ dialog.lightbox[open] .lightbox__panel { animation: lb-in .35s var(--ease) both;
 @media (max-width: 680px) {
   body { font-size: 16px; }
   .nav__links {
-    position: fixed; inset: 0 0 0 30%;
+    position: fixed; inset: 0;
     background: var(--ink); flex-direction: column; justify-content: center;
     gap: 28px; padding: 40px; transform: translateX(100%); transition: transform .4s var(--ease);
   }
@@ -535,4 +535,7 @@ dialog.lightbox[open] .lightbox__panel { animation: lb-in .35s var(--ease) both;
   .cv-item { grid-template-columns: 1fr; gap: 2px; }
   .cv-item .yr { margin-bottom: 2px; }
   .work-grid { grid-template-columns: 1fr; }
+  /* keep the journal badge from covering the figure: reserve a band below it */
+  .card__thumb--fig img { padding: 18px 18px 52px; }
+  .card__thumb--fig .badge { left: 0; right: 0; bottom: 0; text-align: center; }
 }
