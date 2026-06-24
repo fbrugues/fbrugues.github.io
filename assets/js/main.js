@@ -10,32 +10,20 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  // Mobile menu toggle
-  const toggle = document.querySelector(".nav__toggle");
-  const links = document.querySelector(".nav__links");
-  if (toggle && links) {
-    const setMenu = (open) => {
-      links.classList.toggle("open", open);
-      nav.classList.toggle("menu-open", open);
-      toggle.setAttribute("aria-expanded", String(open));
-      document.body.style.overflow = open ? "hidden" : "";
+  // Mobile menu: open/close is handled purely by CSS (the #nav-toggle
+  // checkbox). JS only enhances it: lock page scroll while open, and
+  // close it when a link is tapped or Escape is pressed.
+  const navCb = document.getElementById("nav-toggle");
+  if (navCb) {
+    const sync = () => {
+      document.body.style.overflow = navCb.checked ? "hidden" : "";
     };
-    toggle.addEventListener("click", () =>
-      setMenu(!links.classList.contains("open"))
+    navCb.addEventListener("change", sync);
+    document.querySelectorAll(".nav__links a").forEach((a) =>
+      a.addEventListener("click", () => { navCb.checked = false; sync(); })
     );
-    // close when a nav link is tapped
-    links.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => setMenu(false))
-    );
-    // close when tapping outside the menu (the exposed strip)
-    document.addEventListener("click", (e) => {
-      if (links.classList.contains("open") && !e.target.closest(".nav")) {
-        setMenu(false);
-      }
-    });
-    // close on Escape
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setMenu(false);
+      if (e.key === "Escape") { navCb.checked = false; sync(); }
     });
   }
 

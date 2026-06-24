@@ -134,6 +134,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; line-height: 0
 .nav__links a.active { color: var(--accent); }
 
 .nav__toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+.nav__cb { position: absolute; width: 1px; height: 1px; opacity: 0; margin: -1px; pointer-events: none; }
 .nav__toggle span { display: block; width: 26px; height: 2px; background: var(--ink); margin: 5px 0; transition: .3s var(--ease); }
 
 /* =========================================================
@@ -516,17 +517,17 @@ dialog.lightbox[open] .lightbox__panel { animation: lb-in .35s var(--ease) both;
 @media (max-width: 680px) {
   body { font-size: 16px; }
   .nav__links {
-    position: fixed; inset: 0;
+    position: fixed; inset: 0; z-index: 70;
     background: var(--ink); flex-direction: column; justify-content: center;
-    gap: 28px; padding: 40px; transform: translateX(100%); transition: transform .4s var(--ease);
+    gap: 28px; padding: 40px; transform: translateX(100%); transition: transform .35s var(--ease);
   }
-  .nav__links.open { transform: none; }
+  .nav__cb:checked ~ .nav__links { transform: none; }
   .nav__links a { color: var(--paper); font-size: 1.4rem; }
-  .nav__toggle { display: block; position: relative; z-index: 70; }
-  .nav.menu-open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav.menu-open .nav__toggle span:nth-child(2) { opacity: 0; }
-  .nav.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav.menu-open .nav__toggle span { background: var(--paper); }
+  .nav__toggle { display: block; position: relative; z-index: 80; }
+  .nav__cb:checked ~ .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav__cb:checked ~ .nav__toggle span:nth-child(2) { opacity: 0; }
+  .nav__cb:checked ~ .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav__cb:checked ~ .nav__toggle span { background: var(--paper); }
   .paper { grid-template-columns: 1fr; gap: 8px; }
   .paper .idx { display: none; }
   .paper__venue { align-self: start; }
